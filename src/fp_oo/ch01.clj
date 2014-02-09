@@ -57,3 +57,13 @@
       (range inc-count-coll)
       (repeat inc-count-coll coll))))
 
+
+;; Note that conj is only guaranteed to append to the end of a vector.
+(defn tails-recursive
+  "Returns a sequence of successively smaller subsequences of the argument"
+  [coll]
+  (loop [coll coll
+         acc [] ]
+    (if (empty? coll)
+      (conj acc [])
+      (recur (rest coll) (conj acc coll)))))
