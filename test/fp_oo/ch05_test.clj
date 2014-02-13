@@ -10,8 +10,6 @@
       (is (= (:x point) 1))
       (is (= (:y point) 2)))))
 
-
-
 (deftest send-to-test
   (testing "send-to"
     (use 'fp-oo.ch05)
@@ -20,3 +18,10 @@
       (is (= (:x shifted-point) 3))
       (is (= (:y shifted-point) 4)))))
 
+
+(deftest class-name
+  (testing "class name"
+    (use 'fp-oo.ch05)
+    (let [point (make Point 1 2)]
+      (is (= (send-to point :class-name) 'Point))
+      (is (= (map? (send-to point :class)) true)))))

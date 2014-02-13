@@ -28,7 +28,8 @@
   :__instance_methods__
   {
     :add-instance-values (fn [this x y](assoc this :x x :y y)) ; Constructor
-    :class :__class_symbol__
+    :class (fn [this] (class-from-instance this))
+    :class-name :__class_symbol__
     :shift (fn [this xinc yinc]
              (make Point (+ (:x this) xinc)
                          (+ (:y this) yinc)))
