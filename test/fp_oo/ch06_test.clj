@@ -9,11 +9,6 @@
     (is (= (factorial 1) 1))
     (is (= (factorial 5) 120))))
 
-
-;; (fact
-;;   (recursive-function [] 0) => 0
-;;   (recursive-function [1 2 3 4] 0) => 10)
-
 (deftest add-seq-test
   (testing "add-seq"
     (is (= (add-seq []) 0))
